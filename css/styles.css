@@ -1,0 +1,283 @@
+
+/*初期設定*/
+body {
+  width: auto;
+  margin: 0;
+  font-family: "游ゴシック", "ヒラギノ角ゴ ProN", "メイリオ", "MS Pゴシック", sans-serif;
+  font-weight: bold;
+}
+
+h1, h2, h3, h4, h5, div, ul, li, section, main {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 0 5%;
+  padding-bottom: 56px;
+}
+
+.hide-figure {
+  opacity: 0;
+}
+
+main > section:nth-child(odd){
+  background: rgba(180, 180, 180, .1);
+}
+
+main > section:nth-child(even){
+  background: rgba(120, 120, 120, .2);
+}
+
+/* header */
+
+.fixed-header {
+  display: flex;
+  height: 48px;
+  width: 94%;
+  padding: 0 3%; 
+  align-items: center;
+  position: fixed;
+  background: rgba(255, 255, 255, .8);
+  z-index: 1;
+}
+
+.menu-open {
+  cursor: pointer;
+  display: none;
+}
+
+.header-rink {
+  flex: 1;
+  text-align: center;
+  height: 40px;
+  padding-top: 8px;
+  border: 1px solid rgba(80, 80, 80, .1);
+  border-radius: 4px;
+}
+
+.header-rink > a {
+  color: gray;
+} 
+
+.header-rink:hover {
+  background-color: rgba(180, 180, 180, .1);
+}
+
+.header-home {
+  margin-left: 8px;
+}
+
+.theme-color {
+  margin-left: 24px;
+}
+
+.theme-color > img {
+  height: 16px;
+  width: 16px;
+  border: 1px solid gray;
+  text-decoration: none;
+}
+
+#menu {
+  width: 100%;
+  background: white;
+  margin: 0 auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+  pointer-events: none;
+  transition: opacity .5s;
+}
+
+#menu.show {
+  opacity: .95;
+  pointer-events: auto;
+}
+
+#close {
+  display: block;
+  margin-left: 2%;
+  height: 40px;
+  cursor: pointer;
+}
+
+.menu-items{ 
+  list-style: none;
+  width: 100%;
+}
+
+#menu li {
+  height: 48px;
+  text-align: center;
+  width: 100%;
+  padding-top: 20px;
+  transform: translateY(-16px);
+  transition: transform .5s;
+}
+
+#menu.show li {
+  transform: none;
+}
+
+.menu-items > li > a {
+  text-decoration: none;
+  color: gray;
+}
+
+#menu li:hover {
+  background-color: rgba(180, 180, 180, .1);
+}
+
+@media (max-width: 900px) {
+  .header-rink {
+    display: none;
+  }
+
+  .header-home, .menu-open{
+    display: block;
+  }
+}
+
+/* main */
+
+.seo {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.back-text {
+  font-size: 24px;
+  color: rgba(112, 112, 112, .6);
+  text-align: center;
+  margin-top: 32px;
+  margin-bottom: 16px;
+} 
+
+/* home */
+
+#home h5 {
+  font-size: 32px;
+  text-align: center;
+  transform: rotate(-5deg);
+  opacity: .6;
+  color: rgb(141, 103, 47);
+}
+
+.initial-w {
+  color: red;
+}
+
+.initial-e {
+  color: orange;
+
+}
+
+/* about */
+
+#about h4 {
+  text-align: center;
+  margin: 24px auto;
+  font-size: 20px;
+  border-bottom: 2px solid gray;
+}
+
+#about p {
+  text-align: center;
+  margin: 0 auto;
+  width: fit-content;
+  border-bottom: 1px solid black;
+}
+
+#about a {
+  text-align: center;
+  display: block;
+  margin: 16px auto;
+}
+
+/* skills */
+
+.skills-detail {
+  list-style: none;
+  display: flex;
+}
+
+.skills-type {
+  display: block;
+  padding: 8px;
+  border-radius: 4px;
+  flex: auto;
+  text-align: center;
+}
+
+.skills-type a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+.skills-content {
+  display: none;
+  padding: 12px;
+  border-radius: 2px;
+}
+
+.active {
+  display: block;
+  background: rgb(232, 165, 165);
+}
+
+.standardization {
+  margin: 32px 8% auto 8%;
+  background: rgb(222, 221,221);
+  border: 1px solid gray;
+  border-radius: 8px;
+}
+
+.standard {
+  text-align: center;
+  font-size: 18px;
+}
+
+.level {
+  list-style: none;
+}
+
+.level li {
+  display: inline-block;
+  margin: 4px 16px;
+}
+
+/* footer */
+
+footer {
+  background-color: white;
+}
+
+footer .container {
+  margin-top: 32px;
+  display: flex;
+}
+
+.foot { 
+  width: 50%;
+  text-align: center;
+}
+
+.footer-menu {
+  list-style: none;
+}
+
+.footer-item {
+  display: block;
+  padding: 8px 0px;
+  color: gray;
+}
+
+.footer-item:hover {
+  background: rgb(224, 225, 221);
+}
+
