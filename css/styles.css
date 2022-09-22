@@ -7,7 +7,7 @@ body {
   font-weight: bold;
 }
 
-h1, h2, h3, h4, h5, div, ul, li, section, main {
+h1, h2, h3, h4, h5, div, ul, li, section, main, img {
   margin: 0;
   padding: 0;
 }
@@ -159,26 +159,30 @@ main > section:nth-child(even){
 
 /* home */
 
+#home {
+  margin-top: 0;
+}
+
 #home h5 {
   font-size: 32px;
   text-align: center;
   transform: rotate(-5deg);
   opacity: .6;
-  color: rgb(141, 103, 47);
+  color: rgba(40, 40, 40, .8);
 }
 
 .initial-w {
-  color: red;
+  color: black;
 }
 
 .initial-e {
-  color: orange;
+  color: black;
 }
 
 .carousel {
-  width: 70%;
-  height: 220px;
-  margin: 40px 15% auto 15%;
+  width: 80%;
+  height: calc(width * 1.7);
+  margin: 40px 10% auto 10%;
   overflow: hidden;
   position: relative;
 }
@@ -203,6 +207,10 @@ main > section:nth-child(even){
 }
 
 #prev, #next {
+  color: white;
+  background: rgba(0, 0, 0, .2);
+  width: 6%;
+  height: 8%;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -217,14 +225,9 @@ main > section:nth-child(even){
   right: 0;
 }
 
-#next:hover {
+#next:hover, #prev:hover {
   opacity: .5;
 }
-
-
-/* 画像の大きさを調整 */
-
-
 
 
 /* about */
@@ -259,7 +262,10 @@ main > section:nth-child(even){
 .skills-type {
   display: block;
   padding: 8px;
-  border-radius: 4px;
+  border: 1px solid gray;
+  border-bottom: none;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
   flex: auto;
   text-align: center;
 }
@@ -273,12 +279,27 @@ main > section:nth-child(even){
 .skills-content {
   display: none;
   padding: 12px;
-  border-radius: 2px;
+  border: 1px solid gray;
+  border-top: none;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  box-shadow: 4px 4px rgba(0, 0, 0, .2);
 }
 
 .active {
   display: block;
-  background: rgb(232, 165, 165);
+  background: rgba(232, 165, 165, .5);
+}
+
+.skills-content > div {
+  display: flex;
+  text-align: center;
+}
+
+.skills-content > div > div {
+  flex: 1;
+  margin: 8px;
+  background: rgba(80, 80, 80, .2);
 }
 
 .standardization {
@@ -300,6 +321,58 @@ main > section:nth-child(even){
 .level li {
   display: inline-block;
   margin: 4px 16px;
+}
+
+/* works */
+
+#works .container > div > p {
+  text-align: center;
+  font-size: 18px;
+  background: rgba(80, 80, 80, .2);
+}
+
+#works .container > div > a {
+  display: block;
+  text-align: center;
+  font-size: 14px;
+}
+
+.portfolio-history {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.portfolio-history > div {
+  flex: 1;
+  margin: 8px;
+  padding: 0px 16px;
+  min-width: 160px;
+  max-width: 360px;
+  text-align: center;
+  border: 2px solid gray;
+  border-radius: 16px;
+}
+
+.portfolio-history span {
+  border-bottom: 1px solid gray;
+}
+
+h6 {
+  font-size: 20px;
+}
+
+/* contact */
+
+#contact .container {
+  height: 400px;
+}
+
+#contact .container > p {
+  text-align: center;
+}
+
+.fa-twitter {
+  padding: 4px;
 }
 
 /* footer */
