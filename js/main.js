@@ -68,3 +68,97 @@
   });
 }
 
+{
+  const red = document.getElementById('back-red');
+  const yellow = document.getElementById('back-yellow');
+  const green = document.getElementById('back-green');
+  const blue = document.getElementById('back-blue');
+  const purple = document.getElementById('back-purple');
+  const colorful = document.getElementById('back-colorful');
+
+  const backgroundOdd = document.querySelectorAll('section:nth-child(odd)');
+  const backgroundEven = document.querySelectorAll('section:nth-child(even)');
+  const backgroundAll = document.querySelectorAll('section');
+
+  function classReset (target) {
+    target.classList.remove(target.className);
+  }
+
+  red.addEventListener('click', () => {
+    backgroundOdd.forEach((odd) => {
+      classReset(odd);
+      odd.classList.add('pale-red');
+    });
+    backgroundEven.forEach((even) => {
+      classReset(even);
+      even.classList.add('normal-red');
+    });
+  });
+
+  yellow.addEventListener('click', () => {
+    backgroundOdd.forEach((odd) => {
+      classReset(odd);
+      odd.classList.add('pale-yellow');
+    });
+    backgroundEven.forEach((even) => {
+      classReset(even);
+      even.classList.add('normal-yellow');
+    });
+  });
+
+  green.addEventListener('click', () => {
+    backgroundOdd.forEach((odd) => {
+      classReset(odd);
+      odd.classList.add('pale-green');
+    });
+    backgroundEven.forEach((even) => {
+      classReset(even);
+      even.classList.add('normal-green');
+    });
+  });
+
+  blue.addEventListener('click', () => {
+    backgroundOdd.forEach((odd) => {
+      classReset(odd);
+      odd.classList.add('pale-blue');
+    });
+    backgroundEven.forEach((even) => {
+      classReset(even);
+      even.classList.add('normal-blue');
+    });
+  });
+
+  purple.addEventListener('click', () => {
+    backgroundOdd.forEach((odd) => {
+      classReset(odd);
+      odd.classList.add('pale-purple');
+    });
+    backgroundEven.forEach((even) => {
+      classReset(even);
+      even.classList.add('normal-purple');
+    });
+  });
+
+  colorful.addEventListener('click', () => {
+    let i = 0;
+    backgroundAll.forEach((all) => {
+      classReset(all);
+      if (i === 0) {
+        all.classList.add('pale-red');
+      }
+      else if (i === 1) {
+        all.classList.add('pale-yellow');
+      }
+      else if (i === 2) {
+        all.classList.add('pale-green');
+      }
+      else if (i === 3) {
+        all.classList.add('pale-blue');
+      }
+      else if (i === 4) {
+        all.classList.add('pale-purple');
+      }
+      i++;
+    });
+  });
+}

@@ -21,12 +21,76 @@ h1, h2, h3, h4, h5, div, ul, li, section, main, img {
   display: none;
 }
 
-main > section:nth-child(odd){
+.pale-black {
   background: rgba(180, 180, 180, .1);
 }
 
-main > section:nth-child(even){
+.normal-black {
   background: rgba(120, 120, 120, .2);
+}
+
+.dark-black {
+  background: rgba(120, 120, 120, .3);
+}
+
+.pale-red {
+  background: rgba(255, 0, 0, .1);
+}
+
+.normal-red{
+  background: rgba(255, 0, 0, .2);
+}
+
+.dark-red {
+  background: rgba(255, 0, 0, .3);
+}
+
+.pale-yellow {
+  background: rgba(255, 255, 0, .1);
+}
+
+.normal-yellow {
+  background: rgba(255, 255, 0, .2);
+}
+
+.dark-yellow {
+  background: rgba(255, 255, 0, .3);
+}
+
+.pale-green {
+  background: rgba(0, 255, 0, .1);
+}
+
+.normal-green {
+  background: rgba(0, 255, 0, .2);
+}
+
+.dark-green {
+  background: rgba(0, 255, 0, .3);
+}
+
+.pale-blue {
+  background: rgba(70, 100, 255, .1);
+}
+
+.normal-blue {
+  background: rgba(70, 100, 255, .2);
+}
+
+.dark-blue {
+  background: rgba(70, 100, 255, .3);
+}
+
+.pale-purple {
+  background: rgba(190, 0, 190, .1);
+}
+
+.normal-purple {
+  background: rgba(190, 0, 190, .2);
+}
+
+.dark-purple {
+  background: rgba(190, 0, 190, .3);
 }
 
 /* header */
@@ -79,10 +143,35 @@ main > section:nth-child(even){
   text-decoration: none;
 }
 
+#back-red {
+  background: rgba(255, 0, 0, .3);
+}
+
+#back-yellow {
+  background: rgba(255, 255, 0, .3);
+}
+
+#back-green {
+  background: rgba(0, 255, 0, .3);
+}
+
+#back-blue {
+  background: rgba(70, 100, 255, .3);
+}
+
+#back-purple {
+  background: rgba(190, 0, 190, .3);
+}
+
+#back-colorful {
+  background: linear-gradient(rgba(255, 0, 0, .3) 20%, rgba(255, 255, 0, .3) 40%, rgba(0, 255, 0, .3) 60%, rgba(70, 100, 255, .3) 80%, rgba(190, 0, 190, .3));
+}
+
 #menu {
   width: 100%;
   background: white;
   margin: 0 auto;
+  padding-bottom: 0;
   position: fixed;
   top: 0;
   left: 0;
@@ -161,6 +250,9 @@ main > section:nth-child(even){
 
 #home {
   margin-top: 0;
+  background-image: url(../images/home.png);
+  background-size: cover;
+  background-blend-mode: luminosity;
 }
 
 #home h5 {
@@ -232,6 +324,12 @@ main > section:nth-child(even){
 
 /* about */
 
+#about {
+  background-image: url(../images/about.png);
+  background-size: cover;
+  background-blend-mode: luminosity;
+}
+
 #about h4 {
   text-align: center;
   margin: 24px auto;
@@ -253,6 +351,12 @@ main > section:nth-child(even){
 }
 
 /* skills */
+
+#skills {
+  background-image: url(../images/skills.png);
+  background-size: cover;
+  background-blend-mode: luminosity;
+}
 
 .skills-detail {
   list-style: none;
@@ -325,6 +429,12 @@ main > section:nth-child(even){
 
 /* works */
 
+#works {
+  background-image: url(../images/works.png);
+  background-size: cover;
+  background-blend-mode: luminosity;
+}
+
 #works .container > div > p {
   text-align: center;
   font-size: 18px;
@@ -362,6 +472,12 @@ h6 {
 }
 
 /* contact */
+
+#contact {
+  background-image: url(../images/contact.png);
+  background-size: cover;
+  background-blend-mode: luminosity;
+}
 
 #contact .container {
   height: 400px;
@@ -404,4 +520,7 @@ footer .container {
 .footer-item:hover {
   background: rgb(224, 225, 221);
 }
+
+/* テーマカラーの変更 */
+
 
