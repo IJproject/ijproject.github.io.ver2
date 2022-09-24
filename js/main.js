@@ -29,6 +29,9 @@
   });
 }
 
+
+
+
 {
   const next = document.getElementById('next');
   const prev = document.getElementById('prev');
@@ -68,6 +71,9 @@
   });
 }
 
+
+
+
 {
   const red = document.getElementById('back-red');
   const yellow = document.getElementById('back-yellow');
@@ -85,57 +91,57 @@
   }
 
   red.addEventListener('click', () => {
-    backgroundOdd.forEach((odd) => {
-      classReset(odd);
-      odd.classList.add('pale-red');
-    });
     backgroundEven.forEach((even) => {
       classReset(even);
-      even.classList.add('normal-red');
+      even.classList.add('pale-red');
+    });
+    backgroundOdd.forEach((odd) => {
+      classReset(odd);
+      odd.classList.add('normal-red');
     });
   });
 
   yellow.addEventListener('click', () => {
-    backgroundOdd.forEach((odd) => {
-      classReset(odd);
-      odd.classList.add('pale-yellow');
-    });
     backgroundEven.forEach((even) => {
       classReset(even);
-      even.classList.add('normal-yellow');
+      even.classList.add('pale-yellow');
+    });
+    backgroundOdd.forEach((odd) => {
+      classReset(odd);
+      odd.classList.add('normal-yellow');
     });
   });
 
   green.addEventListener('click', () => {
-    backgroundOdd.forEach((odd) => {
-      classReset(odd);
-      odd.classList.add('pale-green');
-    });
     backgroundEven.forEach((even) => {
       classReset(even);
-      even.classList.add('normal-green');
+      even.classList.add('pale-green');
+    });
+    backgroundOdd.forEach((odd) => {
+      classReset(odd);
+      odd.classList.add('normal-green');
     });
   });
 
   blue.addEventListener('click', () => {
-    backgroundOdd.forEach((odd) => {
-      classReset(odd);
-      odd.classList.add('pale-blue');
-    });
     backgroundEven.forEach((even) => {
       classReset(even);
-      even.classList.add('normal-blue');
+      even.classList.add('pale-blue');
+    });
+    backgroundOdd.forEach((odd) => {
+      classReset(odd);
+      odd.classList.add('normal-blue');
     });
   });
 
   purple.addEventListener('click', () => {
-    backgroundOdd.forEach((odd) => {
-      classReset(odd);
-      odd.classList.add('pale-purple');
-    });
     backgroundEven.forEach((even) => {
       classReset(even);
-      even.classList.add('normal-purple');
+      even.classList.add('pale-purple');
+    });
+    backgroundOdd.forEach((odd) => {
+      classReset(odd);
+      odd.classList.add('normal-purple');
     });
   });
 
@@ -160,5 +166,89 @@
       }
       i++;
     });
+  });
+}
+
+
+
+
+{
+  const skillsType = document.querySelectorAll('.skills-type');
+  const skillsContent = document.querySelectorAll('.skills-content');
+
+  function classRemove (target) {
+    if(target.classList.contains('active-tab')){
+      target.classList.remove('active-tab');
+    }
+  }
+
+  function tabChange (n) {
+      skillsType.forEach((type) => {
+        classRemove(type);
+      });
+      skillsContent.forEach((content) => {
+        classRemove (content);
+      });
+      skillsType[n].classList.add('active-tab');
+      skillsContent[n].classList.add('active-tab');
+  }
+  
+  skillsType[0].addEventListener('click', () => {
+    tabChange(0);
+  });
+
+  skillsType[1].addEventListener('click', () => {
+    tabChange(1);
+  });
+
+  skillsType[2].addEventListener('click', () => {
+    tabChange(2);
+  });
+}
+
+{
+  const attention = document.querySelector('.attention');
+
+  function enter () {
+    attention.classList.remove('hide-attention');
+    attention.classList.add('enter-attention');
+  }
+
+  function exit () {
+    attention.classList.remove('enter-attention');
+    attention.classList.add('exit-attention');
+  }
+
+  function hide () {
+    attention.classList.remove('exit-attention');
+    attention.classList.add('hide-attention');
+  }
+
+  setTimeout(enter, 1000);
+  setTimeout(exit, 7000);
+  setTimeout(hide, 8000);
+}
+
+{
+  const targets = document.querySelectorAll('section > div');
+
+  targets.forEach((target) => {
+    function callback(entries) {
+      console.log(entries[0]);
+  
+      if (!entries[0].isIntersecting) {
+        return;
+      }
+  
+      entries[0].target.classList.add('appear');
+    }
+  
+      const options = {
+        threshold: 0.2,
+      };
+    
+      const observer = new IntersectionObserver(callback, options);
+    
+      observer.observe(target);
   });
 }

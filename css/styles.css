@@ -1,4 +1,3 @@
-
 /*初期設定*/
 body {
   width: auto;
@@ -7,7 +6,17 @@ body {
   font-weight: bold;
 }
 
-h1, h2, h3, h4, h5, div, ul, li, section, main, img {
+h1,
+h2,
+h3,
+h4,
+h5,
+div,
+ul,
+li,
+section,
+main,
+img {
   margin: 0;
   padding: 0;
 }
@@ -37,8 +46,8 @@ h1, h2, h3, h4, h5, div, ul, li, section, main, img {
   background: rgba(255, 0, 0, .1);
 }
 
-.normal-red{
-  background: rgba(255, 0, 0, .2);
+.normal-red {
+  background: rgba(255, 0, 0, .17);
 }
 
 .dark-red {
@@ -62,7 +71,7 @@ h1, h2, h3, h4, h5, div, ul, li, section, main, img {
 }
 
 .normal-green {
-  background: rgba(0, 255, 0, .2);
+  background: rgba(0, 255, 0, .17);
 }
 
 .dark-green {
@@ -86,7 +95,7 @@ h1, h2, h3, h4, h5, div, ul, li, section, main, img {
 }
 
 .normal-purple {
-  background: rgba(190, 0, 190, .2);
+  background: rgba(190, 0, 190, .17);
 }
 
 .dark-purple {
@@ -99,7 +108,7 @@ h1, h2, h3, h4, h5, div, ul, li, section, main, img {
   display: flex;
   height: 48px;
   width: 94%;
-  padding: 0 3%; 
+  padding: 0 3%;
   align-items: center;
   position: fixed;
   background: rgba(255, 255, 255, .8);
@@ -120,9 +129,9 @@ h1, h2, h3, h4, h5, div, ul, li, section, main, img {
   border-radius: 4px;
 }
 
-.header-rink > a {
+.header-rink>a {
   color: gray;
-} 
+}
 
 .header-rink:hover {
   background-color: rgba(180, 180, 180, .1);
@@ -136,11 +145,12 @@ h1, h2, h3, h4, h5, div, ul, li, section, main, img {
   margin-left: 24px;
 }
 
-.theme-color > img {
+.theme-color>img {
   height: 16px;
   width: 16px;
   border: 1px solid gray;
   text-decoration: none;
+  cursor: pointer;
 }
 
 #back-red {
@@ -193,7 +203,7 @@ h1, h2, h3, h4, h5, div, ul, li, section, main, img {
   cursor: pointer;
 }
 
-.menu-items{ 
+.menu-items {
   list-style: none;
   width: 100%;
 }
@@ -211,7 +221,7 @@ h1, h2, h3, h4, h5, div, ul, li, section, main, img {
   transform: none;
 }
 
-.menu-items > li > a {
+.menu-items>li>a {
   text-decoration: none;
   color: gray;
 }
@@ -225,7 +235,8 @@ h1, h2, h3, h4, h5, div, ul, li, section, main, img {
     display: none;
   }
 
-  .header-home, .menu-open{
+  .header-home,
+  .menu-open {
     display: block;
   }
 }
@@ -244,9 +255,61 @@ h1, h2, h3, h4, h5, div, ul, li, section, main, img {
   text-align: center;
   margin-top: 32px;
   margin-bottom: 16px;
-} 
+}
 
 /* home */
+
+.attention {
+  background: rgb(255, 255, 255);
+  padding: 8px;
+  border: 1px solid black;
+  border-radius: 8px;
+  position: fixed;
+  top: 60px;
+  right: 8px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.hide-attention {
+  display: none;
+}
+
+.enter-attention {
+  display: block;
+  animation-name: enter;
+  animation-duration: 1s;
+}
+
+.exit-attention {
+  display: block;
+  animation-name: exit;
+  animation-duration: 1s;
+}
+
+@keyframes enter {
+  0% {
+    transform: scale(0, 0);
+  }
+
+  70% {
+    transform: scale(1.1, 1.1);
+  }
+
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes exit {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
 
 #home {
   margin-top: 0;
@@ -272,11 +335,12 @@ h1, h2, h3, h4, h5, div, ul, li, section, main, img {
 }
 
 .carousel {
-  width: 80%;
+  width: 70%;
   height: calc(width * 1.7);
-  margin: 40px 10% auto 10%;
+  margin: 40px 15% auto 15%;
   overflow: hidden;
   position: relative;
+  opacity: .8;
 }
 
 .carousel-list {
@@ -295,14 +359,16 @@ h1, h2, h3, h4, h5, div, ul, li, section, main, img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  
+
 }
 
-#prev, #next {
+#prev,
+#next {
   color: white;
   background: rgba(0, 0, 0, .2);
-  width: 6%;
-  height: 8%;
+  width: 24px;
+  height: 20px;
+  padding: auto;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -317,8 +383,27 @@ h1, h2, h3, h4, h5, div, ul, li, section, main, img {
   right: 0;
 }
 
-#next:hover, #prev:hover {
+#next:hover,
+#prev:hover {
   opacity: .5;
+}
+
+@media (min-width: 650px) and (max-width: 1000px) {
+
+  #prev,
+  #next {
+    width: 30px;
+    height: 24px;
+  }
+}
+
+@media (min-width: 1001px) {
+
+  #prev,
+  #next {
+    width: 36px;
+    height: 30px;
+  }
 }
 
 
@@ -374,6 +459,11 @@ h1, h2, h3, h4, h5, div, ul, li, section, main, img {
   text-align: center;
 }
 
+.skills-type:hover {
+  background: rgba(80, 80, 80, .1);
+  cursor: pointer;
+}
+
 .skills-type a {
   text-decoration: none;
   color: black;
@@ -390,25 +480,28 @@ h1, h2, h3, h4, h5, div, ul, li, section, main, img {
   box-shadow: 4px 4px rgba(0, 0, 0, .2);
 }
 
-.active {
+.active-tab {
   display: block;
-  background: rgba(232, 165, 165, .5);
+  background: rgba(80, 80, 80, .1);
 }
 
-.skills-content > div {
+.skills-content>div {
   display: flex;
+  flex-wrap: wrap;
   text-align: center;
 }
 
-.skills-content > div > div {
+.skills-content>div>div {
   flex: 1;
+  min-width: 100px;
+  max-width: 150px;
   margin: 8px;
   background: rgba(80, 80, 80, .2);
 }
 
 .standardization {
   margin: 32px 8% auto 8%;
-  background: rgb(222, 221,221);
+  background: rgba(80, 80, 80, .1);
   border: 1px solid gray;
   border-radius: 8px;
 }
@@ -435,13 +528,13 @@ h1, h2, h3, h4, h5, div, ul, li, section, main, img {
   background-blend-mode: luminosity;
 }
 
-#works .container > div > p {
+#works .container>div>p {
   text-align: center;
   font-size: 18px;
   background: rgba(80, 80, 80, .2);
 }
 
-#works .container > div > a {
+#works .container>div>a {
   display: block;
   text-align: center;
   font-size: 14px;
@@ -452,7 +545,7 @@ h1, h2, h3, h4, h5, div, ul, li, section, main, img {
   flex-wrap: wrap;
 }
 
-.portfolio-history > div {
+.portfolio-history>div {
   flex: 1;
   margin: 8px;
   padding: 0px 16px;
@@ -483,7 +576,7 @@ h6 {
   height: 400px;
 }
 
-#contact .container > p {
+#contact .container>p {
   text-align: center;
 }
 
@@ -502,7 +595,7 @@ footer .container {
   display: flex;
 }
 
-.foot { 
+.foot {
   width: 50%;
   text-align: center;
 }
@@ -521,6 +614,14 @@ footer .container {
   background: rgb(224, 225, 221);
 }
 
-/* テーマカラーの変更 */
+/* API */
+section > div{
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s, transform 1s;
+}
 
-
+section > div.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
